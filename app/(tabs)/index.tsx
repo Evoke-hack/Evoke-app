@@ -1,31 +1,56 @@
-import { StyleSheet } from 'react-native';
+
+import { Platform, RefreshControl, ScrollView, StyleSheet } from 'react-native';
+import React, { useRef } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Lottie from 'lottie-react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
+import Colors from '@/constants/Colors';
+import { createRandomUser } from '@/utils/generate-dommy-data';
+import { ThreadsContext } from '@/context/thread-context';
+import ThreadsItem from '@/components/Threadsitem';
+
+// const user = createRandomUser();
+// console.log(JSON.stringify(user, null, 2));
 
 export default function TabOneScreen() {
+  const animationRef = React.useRef<Lottie>(null)
+  const thread = React.useContext(ThreadsContext)
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+    <SafeAreaView>
+      <ScrollView
+          contentContainerStyle={{
+            borderColor: "grey",
+            paddingHorizontal:10,
+            // paddingTop: Platform.select({android: })
+        }}
+        refreshControl={
+          <RefreshControl 
+              refreshing={false} 
+              tintColor={'transparent'}
+              onRefresh={() => {animationRef.current?.play();}}
+          />
+        }
+      >
+        
+        <Lottie 
+        ref = {animationRef}
+        source={require("../../lottie-animations/twitter.json")}
+        loop={false}
+        autoPlay
+        style={{width:150,height:150,alignSelf:'center',}}
+        // onAnimationFinish={() => {
+        //   alert("finish")
+        // }}
+        />
+        {
+          thread.map((thread) => (
+            <ThreadsItem key={thread.id} {...thread}/>
+          ))
+        }
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
