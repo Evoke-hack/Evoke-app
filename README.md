@@ -2,7 +2,7 @@
 
 ## Overview
 
-Evoke is a decentralized social media platform built on Next.js and powered by Sanity as the database. It empowers users to freely share images and tweets while ensuring the highest level of privacy and security. One of its key features is the ability to permanently store data, giving users the right to express themselves without any form of censorship.
+The Evoke Mobile App is a React Native application that extends the Evoke decentralized social media platform to mobile devices. This app allows users to seamlessly connect with the same web features, enabling the upload of images and tweets while ensuring privacy and security.
 
 ## Table of Contents
 - [Features](#features)
@@ -16,14 +16,11 @@ Evoke is a decentralized social media platform built on Next.js and powered by S
 
 ## Features
 
-1. **Freedom of Speech:**
-   - Users have the right to speak without any form of censorship, fostering an environment of open expression.
+1. **Mobile Extension:**
+      - Access Evoke's decentralized social media features on your mobile device.
 
-2. **Image and Tweet Upload:**
-   - Upload various images and tweets seamlessly.
-
-3. **Permanent Data Storage:**
-   - All user-generated content is stored permanently in the Sanity database, ensuring data integrity.
+3. **Privacy and Security:**
+   - Maintain the highest level of privacy and security, consistent with the web version.
 
 4. **Decentralized Privacy:**
    - Users' data is handled with the highest level of privacy and security, leveraging web3 technologies.
@@ -32,10 +29,9 @@ Evoke is a decentralized social media platform built on Next.js and powered by S
 
 ### Prerequisites
 
-Before running Evoke, ensure you have the following dependencies installed:
+Before running the Evoke Mobile App, ensure you have the following dependencies installed:
 - Node.js
-- [Other Next.js dependencies]
-- Sanity CLI (for managing Sanity Studio)
+- React Native CLI
 
 ### Installation
 
@@ -44,28 +40,21 @@ Before running Evoke, ensure you have the following dependencies installed:
    git clone https://github.com/Evoke-hack
 
 2.Install dependencies: 
-   cd evoke
+   cd evoke-mobile
    npm install
-
-3.Set up Sanity Studio:
-   cd sanity-studio
-   sanity init
-
-### Configuration
-
-1.Update configuration files:
-   Update `sanity.json` with your Sanity project details.
-
    
 ## Usage
 
-   1.Run the Sanity Studio:
-      cd sanity-studio
-      sanity start
+   1. Run the application on an emulator or connected device:
+      ```bash  
+      npx react-native run-android   # For Android
+      npx react-native run-ios       # For iOS
+
+  2. Explore the mobile app and use it to VIEW images and posts to the Evoke platform.
 
 ## Contribute
 
-We welcome contributions from the community to make Evoke even better! Whether you want to report a bug, suggest a new feature, or contribute code, your help is appreciated.
+We welcome contributions to improve the Evoke Mobile App! If you encounter bugs, have feature requests, or want to contribute code, follow the guidelines outlined in CONTRIBUTING.md.
 
 ### Bug Reports
 
