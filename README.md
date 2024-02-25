@@ -39,10 +39,12 @@ Before running the Evoke Mobile App, ensure you have the following dependencies 
    ```bash
    git clone https://github.com/Evoke-hack
 
+
 2.Install dependencies: 
+
    cd evoke-mobile
    npm install
-   
+
 ## Usage
 
    1. Run the application on an emulator or connected device:
