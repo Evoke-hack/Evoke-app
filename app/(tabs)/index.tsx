@@ -17,9 +17,9 @@ import ThreadsItem from '@/components/Threadsitem';
 export default function TabOneScreen() {
   const animationRef = React.useRef<Lottie>(null)
   const thread = React.useContext(ThreadsContext)
-  function restartApp() {
-    throw new Error('Function not implemented.');
-  }
+  // function restartApp() {
+  //   throw new Error('Function not implemented.');
+  // }
 
   return (
     <SafeAreaView>
